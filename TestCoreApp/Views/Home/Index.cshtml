@@ -216,8 +216,65 @@
                     </a>
                     <div class="c-content__property-favorite"></div>
                 </div>
-            }
-           
+            }           
         </div>
+        <div class="l-row l-row--center">
+            <a class="l-btn l-btn-more l-btn-more--arrow-changeable" href="#"><span class="h-hide-on-mobile">See </span>More</a>
+        </div>
+        <div class="l-divider l-divider--big"></div>
+        <h3>Past Sales</h3>
+        <div class="c-content__homes">
+            <div class="c-content__homes-row">
+                <div class="c-content__homes-col c-content__homes-col--property">
+                    Property
+                </div>
+                <div class="c-content__homes-col c-content__homes-col--details">
+                    Details
+                </div>
+                <div class="c-content__homes-col c-content__homes-col--represented">
+                    Represented
+                </div>
+                <div class="c-content__homes-col c-content__homes-col--price">
+                    Price
+                </div>
+            </div>
+
+            @foreach (var item in Model.PastSales)
+            {
+                <div class="c-content__homes-row">
+                    <div class="c-content__homes-col c-content__homes-col--property">
+                        <div class="c-content__homes-property-photo">
+                            <img src="@item.ImgUrl" alt="">
+                        </div>
+                    </div>
+                    <div class="c-content__homes-col c-content__homes-col--details">
+                        <span class="c-content__homes-price">$@String.Format("{0:N0}", item.CurrentPrice)</span>
+                        <span class="c-content__homes-location">@item.Location</span>
+                        <span class="c-content__homes-address">@item.Address, @item.Location</span>
+                        <span class="c-content__homes-info">@String.Format("{0} bed, {1} bath, {2} sqft", item.Beds, item.Bath, String.Format("{0:N0}", item.SQFT))</span>
+                        <span class="c-content__homes-date">Sold date: @item.SoldDate.ToShortDateString()</span>
+                    </div>
+                    <div class="c-content__homes-col c-content__homes-col--represented">
+                        @item.Represented
+                    </div>
+                    <div class="c-content__homes-col c-content__homes-col--price">
+                        $@String.Format("{0:N0}", item.CurrentPrice)
+                    </div>
+                </div>
+            }           
+        </div>
+        <ul class="l-list l-list--pagination h-hide-on-tablet">
+            <li class="l-list__pagination-control l-list__pagination-control--prev l-list__pagination-control--disabled">
+                <a href="#"></a>
+            </li>
+            <li class="l-list__pagination-pages">
+                <span class="l-list-pagination__current">1</span>
+                <span class="l-list-pagination__pages-count">32</span>
+            </li>
+            <li class="l-list__pagination-control l-list__pagination-control--next">
+                <a href="#"></a>
+            </li>
+        </ul>
+        <div class="l-divider l-divider--big"></div>
     </div>
 </div>
