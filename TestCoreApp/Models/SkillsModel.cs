@@ -17,6 +17,7 @@ namespace TestCoreApp.Models
                 this.ProcessExpertise = 4.2;
                 this.Responsiveness = 5;
                 this.NegotiationSkills = 4.1;
+                this.Average = Math.Round(((this.LocalKnowledge + this.NegotiationSkills + this.ProcessExpertise + this.Responsiveness) / 4), 1, MidpointRounding.AwayFromZero);
             }
         }
 
@@ -52,5 +53,7 @@ namespace TestCoreApp.Models
                 return (int)((this.NegotiationSkills / 5) * 100);
             }
         }
+
+        public double Average { get; set; }
     }
 }

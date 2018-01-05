@@ -14,14 +14,14 @@
                     </div>
                     <div class="c-content__rating c-content__rating--agent">
                         <div class="c-content__rating-stars">
-                            <span class="c-content__rating-star c-content__rating-star--full"></span>
-                            <span class="c-content__rating-star c-content__rating-star--full"></span>
-                            <span class="c-content__rating-star c-content__rating-star--full"></span>
-                            <span class="c-content__rating-star c-content__rating-star--full"></span>
-                            <span class="c-content__rating-star c-content__rating-star--half-full"></span>
+                            @for (int i = 0; i < 5; i++)
+                            {
+                                <span class="@("c-content__rating-star c-content__rating-star" + 
+                                    ((Model.Skills.Average - i) > 0.5 ? "--full" : (Model.Skills.Average - i) == 0.5 ? "--half-full" : null))"></span>
+                            }
                         </div>
                         <div class="c-content__rating-info">
-                            <div class="c-content__rating-average">4.5</div>
+                            <div class="c-content__rating-average">@Model.Skills.Average</div>
                             <a href="#" class="c-content__agent-review-count">16</a>
                         </div>
                     </div>
@@ -325,14 +325,14 @@
                             </div>
                             <div class="c-content__rating c-content__rating--review">
                                 <div class="c-content__rating-stars">
-                                    <span class="c-content__rating-star c-content__rating-star--full"></span>
-                                    <span class="c-content__rating-star c-content__rating-star--full"></span>
-                                    <span class="c-content__rating-star c-content__rating-star--full"></span>
-                                    <span class="c-content__rating-star c-content__rating-star--full"></span>
-                                    <span class="c-content__rating-star c-content__rating-star--half-full"></span>
+                                    @for (int i = 0; i < 5; i++)
+                                    {
+                                        <span class="@("c-content__rating-star c-content__rating-star" +
+                                            ((item.Skills.Average - i) > 0.5 ? "--full" : (item.Skills.Average - i) == 0.5 ? "--half-full" : null))"></span>
+                                    }
                                 </div>
                                 <div class="c-content__rating-info">
-                                    <div class="c-content__review-average">@item.Average</div>
+                                    <div class="c-content__review-average">@item.Skills.Average</div>
                                 </div>
                             </div>
                             <div class="c-content__review-meta h-hide-on-mobile">
