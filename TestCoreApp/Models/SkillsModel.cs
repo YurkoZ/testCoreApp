@@ -21,8 +21,36 @@ namespace TestCoreApp.Models
         }
 
         public double LocalKnowledge { get; set; }
+        public int LocalKnowledgePercentage
+        {
+            get
+            {
+                return (int)((this.LocalKnowledge/5)*100);
+            }
+        }
         public double ProcessExpertise { get; set; }
+        public int ProcessExpertisePercentage
+        {
+            get
+            {
+                return (int)((this.ProcessExpertise / 5) * 100);
+            }
+        }
         public double Responsiveness { get; set; }
+        public int ResponsivenessPercentage
+        {
+            get
+            {
+                return (int)((this.Responsiveness / 5) * 100);
+            }
+        }
         public double NegotiationSkills { get; set; }
+        public int NegotiationSkillsPercentage
+        {
+            get
+            {
+                return (int)((this.NegotiationSkills / 5) * 100);
+            }
+        }
     }
 }

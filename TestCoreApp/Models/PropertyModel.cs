@@ -7,8 +7,6 @@ namespace TestCoreApp.Models
 {
     public class PropertyModel
     {
-        public PropertyModel() { }
-
         public string ImgUrl { get; set; }
         public double CurrentPrice { get; set; }
         public double PriceChanges { get; set; }

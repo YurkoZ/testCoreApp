@@ -2856,12 +2856,23 @@ textarea:focus ~ .l-form-control-focus:after,
         padding: 0 0 3px;
     }
 }
-/*----------------------------------------
-		Login with Social 
----------------------------------------- */
-.l-form-row--login-social {
-    padding: 0 10px;
+
+.custom-select {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding-left: 10px;
 }
+
+    .custom-select option {
+        /*background-color: #f5f5f5;*/
+        margin: 5px 19px!important;
+    }
+/*----------------------------------------
+Login with Social 
+---------------------------------------- */
+        .l-form-row--login-social {
+            padding: 0 10px;
+        }
 
 @media (min-width: 375px) {
     .l-form-row--login-social {

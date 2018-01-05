@@ -37,6 +37,15 @@ namespace TestCoreApp.Models
                 this.PastSales.Add(new PropertyModel() { ImgUrl = "images/property/home7.jpg", CurrentPrice = 1256000, Location = "CA 91941", Address = "5160 Alzeda Dr • La Mesa",
                     Beds = 8, Bath = 4.5, SQFT = 5505, SoldDate = new DateTime(2017, 7, 7), Represented = "Seller" });
 
+                this.Reviews = new List<ReviewModel>();
+                this.Reviews.Add(new ReviewModel() { Date = new DateTime(2017, 9, 24), Author = "russroberts", Home = "Bought a home in 2017 in El Cajon, CA", Skills = new SkillsModel(true),
+                    Text = "Being a full-service  Realtor  since 2007, I have been baptized  by fire in a very tough housing market. " +
+                    "I have successfully closed over  60 transactions and processed over 70 short sales both as the listing agent and  some for other agents. " +
+                    "I am very knowledgeable about lenders and their processes. I strive to exceed expectations and never forget that I am always accountable to my clients."});
+                this.Reviews.Add(new ReviewModel() { Date = new DateTime(2017, 8, 20), Author = "testUser", Home = "Bought a home in 2017 in El Cajon, CA", Skills = new SkillsModel(true),
+                    Text = "Most important to me was communication and Mark saw that every question or concern of ours we met with full and complete information. " +
+                    "In most cases, Mark delivered information to us before we even had to ask. I look forward to working with Mark in the future because I know that I can trust him to."
+                });
             }
         }
 
@@ -46,5 +55,6 @@ namespace TestCoreApp.Models
         public SkillsModel Skills { get; set; }
         public List<PropertyModel> ActiveListing { get; set; }
         public List<PropertyModel> PastSales { get; set; }
+        public List<ReviewModel> Reviews { get; set; }
     }
 }
