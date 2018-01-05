@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TestCoreApp.Models;
 
 namespace TestCoreApp.Controllers
 {
@@ -10,7 +11,7 @@ namespace TestCoreApp.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(new ProfileViewModel(true));
         }
     }
 }

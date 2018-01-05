@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ProfileViewModel
+@{
     ViewData["Title"] = "Agent profile";
 }
 
@@ -7,7 +8,7 @@
         <div class="c-content__agent-profile h-clearfix">
             <div class="c-content__agent-overview l-col l-col-8">
                 <div class="c-content__agent-card">
-                    <h1>Melissa Crosby</h1>
+                    <h1>@Model.FirstName @Model.LastName</h1>
                     <div class="c-content__agent-profile-photo">
                         <img src="images/agents/agent5.png" alt="">
                     </div>
@@ -27,30 +28,30 @@
                     <div class="c-content__skill-bars c-content__skill-bars--agent">
                         <div class="c-content__skill-bar">
                             <div class="c-content__skill-bar-title">Local knowledge</div>
-                            <div class="c-content__skill-bar-average">4.5</div>
+                            <div class="c-content__skill-bar-average">@String.Format("{0:0.0}", Model.Skills.LocalKnowledge)</div>
                             <div class="c-content__skill-bar-row--default">
-                                <div class="c-content__skill-bar-row" style="width:90%;"></div>
+                                <div class="c-content__skill-bar-row" style="width:@((Model.Skills.LocalKnowledge/5)*100)%;"></div>
                             </div>
                         </div>
                         <div class="c-content__skill-bar">
                             <div class="c-content__skill-bar-title">Process expertise</div>
-                            <div class="c-content__skill-bar-average">4.2</div>
+                            <div class="c-content__skill-bar-average">@String.Format("{0:0.0}", Model.Skills.ProcessExpertise)</div>
                             <div class="c-content__skill-bar-row--default">
-                                <div class="c-content__skill-bar-row" style="width:84%;"></div>
+                                <div class="c-content__skill-bar-row" style="width:@((Model.Skills.ProcessExpertise/5)*100)%;"></div>
                             </div>
                         </div>
                         <div class="c-content__skill-bar">
                             <div class="c-content__skill-bar-title">Responsiveness</div>
-                            <div class="c-content__skill-bar-average">5.0</div>
+                            <div class="c-content__skill-bar-average">@String.Format("{0:0.0}", Model.Skills.Responsiveness)</div>
                             <div class="c-content__skill-bar-row--default">
-                                <div class="c-content__skill-bar-row" style="width:100%;"></div>
+                                <div class="c-content__skill-bar-row" style="width:@((Model.Skills.Responsiveness/5)*100)%;"></div>
                             </div>
                         </div>
                         <div class="c-content__skill-bar">
                             <div class="c-content__skill-bar-title">Negotiation Skills</div>
-                            <div class="c-content__skill-bar-average">4.1</div>
+                            <div class="c-content__skill-bar-average">@String.Format("{0:0.0}", Model.Skills.NegotiationSkills)</div>
                             <div class="c-content__skill-bar-row--default">
-                                <div class="c-content__skill-bar-row" style="width:82%;"></div>
+                                <div class="c-content__skill-bar-row" style="width:@((Model.Skills.NegotiationSkills/5)*100)%;"></div>
                             </div>
                         </div>
                     </div>
