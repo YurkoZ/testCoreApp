@@ -2867,6 +2867,14 @@ textarea:focus ~ .l-form-control-focus:after,
         /*background-color: #f5f5f5;*/
         margin: 5px 19px!important;
     }
+
+    .custom-select option:hover {
+        background-color: #f5f5f5;
+    }
+
+    .custom-select option:checked {
+        background-color: #f5f5f5;
+    }
 /*----------------------------------------
 Login with Social 
 ---------------------------------------- */
@@ -11872,10 +11880,29 @@ ul.l-dropdown--status {
             background: transparent;
         }
 
-/*----------------------------------------
+.header-dropdown:hover {
+    color: #555;
+    background: rgba(255,255,255,.8);
+    border-left-color: #eee;
+    border-right-color: #eee;
+}
+.buy-btn:hover + .buy-list {
+    display: block;
+}
+.buy-list:hover {
+    display: block;
+}
+
+.agents-btn:hover + .agents-list {
+    display: block;
+}
+.agents-list:hover {
+    display: block;
+}
+    /*----------------------------------------
 		Account Leads Dropdown
 ---------------------------------------- */
-.l-dropdown--leads {
+    .l-dropdown--leads {
     display: none;
     width: 100%;
     padding: 0;

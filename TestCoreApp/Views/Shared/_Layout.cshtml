@@ -91,8 +91,8 @@
             <div class="c-header__nav">
                 <ul class="h-clearfix">
                     <li class="has-dropdown">
-                        <span>Buy</span>
-                        <ul class="l-dropdown l-dropdown--left">
+                        <a class="header-dropdown buy-btn">Buy</a>
+                        <ul class="l-dropdown l-dropdown--left buy-list">
                             <li class="user-location">
                                 84004 - Alpine
                             </li>
@@ -123,8 +123,8 @@
                         <a href="#">Mortgage</a>
                     </li>
                     <li class="has-dropdown">
-                        <span>Agents</span>
-                        <ul class="l-dropdown l-dropdown--right">
+                        <a class="header-dropdown agents-btn">Agents</a>
+                        <ul class="l-dropdown l-dropdown--right agents-list">
                             <li>
                                 <a href="#">Looking for an Agent</a>
                             </li>
@@ -140,6 +140,12 @@
             </div>
         </div>
     </header>
+    <button type="button" class="c-header__nav-toggle">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="c-header__nav-close l-close-btn"></span>
+    </button>
     <div class="c-content">
         @RenderBody()
     </div>
@@ -215,6 +221,19 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </footer>
+    <footer id="footer-mobile" class="c-footer c-footer--mobile c-footer--mobile-agent">
+        <div class="c-footer__links c-footer__links--agent">
+            <a class="l-link l-link--action l-link--call" href="#"><span>Call</span></a>
+            <a class="l-link l-link--action l-link--contact" href="mailto:email@goes.here"><span>Contact</span></a>
+            <a class="l-link l-link--action l-link--review" href="#"><span>Leave Review</span></a>
+        </div>
+        <div class="c-footer__links c-footer__links--property">
+            <a class="l-link l-link--action l-link--save" href="#"><span>Save</span></a>
+            <a class="l-link l-link--action l-link--agent" href="#"><span>Agent</span></a>
+            <a class="l-link l-link--action l-link--direction" href="#"><span>Directions</span></a>
+            <a class="l-link l-link--action l-link--share" href="#"><span>Share</span></a>
         </div>
     </footer>
     @RenderSection("Scripts", required: false)
